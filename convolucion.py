@@ -31,5 +31,4 @@ def conv_GS(Img):
 
     #funcion de convolucion
     return convolucion(IGS,Kn)
-cv2.imwrite("004GS.jpg",conv_GS("004.jpg"))
 
