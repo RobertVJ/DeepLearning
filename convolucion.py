@@ -19,22 +19,17 @@ def convolucion(Ioriginal,Kernel):
             else:
                 Resultado[i][j]=255
     return Resultado
-#imagenes
-K=[[-1,0,1],[-1,0,1],[-1,0,1]]
-I=[[2,0,1,1,1],[3,0,0,0,2],[1,1,1,1,1],[3,1,1,1,2],[1,1,1,1,1]]
+def conv_GS(Img):
 
-#imagenes a numpy arrays
-In=np.array(I)
-Kn=np.array(K)
-Img = input("Inserte nombre y extención del archivo (example.jpg): ")
-IRGB=cv2.imread(Img)
-IGS=cv2.cvtColor(IRGB,cv2.COLOR_BGR2GRAY)
-print(IGS.shape)
+    #Kernel
+    K=[[-1,0,1],[-1,0,1],[-1,0,1]]
 
-#funcion de convolucion
-R=convolucion(IGS,Kn)
-print(R)
-print(R.shape)
-cv2.imwrite("C"+Img,R)
+    #imagenes a numpy arrays
+    Kn=np.array(K)
+    IRGB=cv2.imread(Img)
+    IGS=cv2.cvtColor(IRGB,cv2.COLOR_BGR2GRAY)
 
+    #funcion de convolucion
+    return convolucion(IGS,Kn)
+cv2.imwrite("004GS.jpg",conv_GS("004.jpg"))
 
