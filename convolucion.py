@@ -22,13 +22,11 @@ def convolucion(Ioriginal,Kernel):
 def conv_GS(Img):
 
     #Kernel
-    K=[[-1,0,1],[-1,0,1],[-1,0,1]]
-
+    Kernel=1/256*np.array([[1,4,6,4,1],[4,16,24,16,4],[6,24,36,24,6],[4,16,24,16,4],[1,4,6,2,1]])
     #imagenes a numpy arrays
-    Kn=np.array(K)
     IRGB=cv2.imread(Img)
     IGS=cv2.cvtColor(IRGB,cv2.COLOR_BGR2GRAY)
 
     #funcion de convolucion
-    return convolucion(IGS,Kn)
+    return convolucion(IGS,Kernel)
 

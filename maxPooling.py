@@ -12,6 +12,6 @@ import cv2
 #----------------------------------------------------
 
 def Max_Pooling(Img):
-    Resultado=skimage.measure.block_reduce(Img,(3,3), np.max)
+    Resultado=skimage.measure.block_reduce(Img,(2,2), np.max)
     return Resultado
 
