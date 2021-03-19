@@ -26,8 +26,8 @@ I=[[2,0,1,1,1],[3,0,0,0,2],[1,1,1,1,1],[3,1,1,1,2],[1,1,1,1,1]]
 #imagenes a numpy arrays
 In=np.array(I)
 Kn=np.array(K)
-
-IRGB=cv2.imread('004.jpg')
+Img = input("Inserte nombre y extención del archivo (example.jpg): ")
+IRGB=cv2.imread(Img)
 IGS=cv2.cvtColor(IRGB,cv2.COLOR_BGR2GRAY)
 print(IGS.shape)
 
@@ -35,6 +35,6 @@ print(IGS.shape)
 R=convolucion(IGS,Kn)
 print(R)
 print(R.shape)
-cv2.imwrite('004C.jpg',R)
+cv2.imwrite("C"+Img,R)
 
 
